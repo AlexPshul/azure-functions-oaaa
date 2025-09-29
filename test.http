@@ -1,0 +1,6 @@
+POST http://localhost:7071/api/agent/Agent257
+Content-Type: application/json
+
+{
+  "message": "Say hello in a funny and very long way. "
+}
