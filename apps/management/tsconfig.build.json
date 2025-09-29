@@ -5,6 +5,10 @@
     "sourceMap": true,
     "strict": true,
     "outDir": "dist",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@oaaa/agents": ["../../libs/agents/src/index.ts"]
+    }
   }
 }
