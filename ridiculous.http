@@ -1,0 +1,9 @@
+POST http://localhost:7071/api/check-purchase-request
+Content-Type: application/json
+
+{
+  "name": "Rolls-Royce",
+  "description": "The highest quality car",
+  "reasoning": "This car represents the pinnacle of luxury and engineering excellence. This way I can drive my kids to school in style.",
+  "price": 250000
+}

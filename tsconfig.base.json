@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
+    "rootDir": ".",
     "baseUrl": ".",
-    "composite": true,
     "declarationMap": true,
     "emitDeclarationOnly": true,
     "importHelpers": true,
@@ -23,5 +23,6 @@
     "paths": {
       "@oaaa/agents": ["libs/agents/src/index.ts"]
     }
-  }
+  },
+  "exclude": ["node_modules", "tmp", "**/*.spec.ts", "**/assets/index.ts"]
 }

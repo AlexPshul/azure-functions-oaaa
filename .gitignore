@@ -45,3 +45,9 @@ Thumbs.db
 
 # Local env files
 .env
+
+# Azurite
+__azurite_*
+AzuriteConfig
+__blobstorage__
+__queuestorage__

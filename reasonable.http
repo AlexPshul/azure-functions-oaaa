@@ -1,0 +1,9 @@
+POST http://localhost:7071/api/check-purchase-request
+Content-Type: application/json
+
+{
+  "name": "New Server",
+  "description": "A new server rack that is capable of running the best AI models in the market to help our company grow.",
+  "reasoning": "This server rack represents the pinnacle of technology and engineering excellence. It will enable our company to leverage advanced AI models for better decision-making and operational efficiency.",
+  "price": 50000
+}

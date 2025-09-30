@@ -1,0 +1,9 @@
+POST http://localhost:7071/api/check-purchase-request
+Content-Type: application/json
+
+{
+  "name": "New Laptop",
+  "description": "A new laptop for our lead developer that is capable of running the best AI models in the market to help our company grow.",
+  "reasoning": "Our dev has an old laptop which slows down our development of the AI features. This new laptop will enable our lead developer to leverage advanced AI models for better decision-making and operational efficiency.",
+  "price": 5000
+}
