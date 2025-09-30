@@ -6,6 +6,7 @@ import {
   MessageDeltaChunk,
   MessageDeltaTextContent,
   MessageStreamEvent,
+  RunStep,
   RunStepDeltaChunk,
   RunStepDeltaToolCallUnion,
   RunStepStreamEvent,
@@ -66,18 +67,21 @@ export const streamAgentResponse = async (agent: Agent, message: string): Promis
                 if (toolCall.id) {
                   // This will happen only when the tool is called for the first time
                   console.log(`Tool Call:`, toolCall.type);
-                  stream.write('\nCalled a tool: ' + toolCall.type + '\n');
+                  stream.write('   > Called a tool: ' + toolCall.type + '\n');
                 }
               });
             }
           }
           break;
         case RunStepStreamEvent.ThreadRunStepCompleted:
-          console.log('Tool call completed.');
-          stream.write('\nTool call completed.\n');
+          {
+            const { type } = eventMessage.data as RunStep;
+            if (type === 'tool_calls') {
+              console.log('Tool call completed.', JSON.stringify(eventMessage));
+              stream.write('   < Tool call completed.\n\n');
+            }
+          }
           break;
-        default:
-          console.log(`Unknown event: ${eventMessage.event}. Data: ${JSON.stringify(eventMessage.data)}`);
       }
     }
 
